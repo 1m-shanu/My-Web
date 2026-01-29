@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shantanu Creative Web</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* RESET & BASE */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{overflow-x:hidden;scroll-behavior:smooth;background:#020617;color:white;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+section{min-height:100vh;padding:80px 10%;display:flex;flex-direction:column;justify-content:center;position:relative;transition:0.5s;}
+
+/* NAVBAR */
+nav{position:fixed;top:0;width:100%;padding:20px 50px;background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;z-index:1000;}
+nav h1{color:#38bdf8;font-size:28px;}
+nav ul{display:flex;gap:25px;}
+nav li{cursor:pointer;transition:0.3s;color:white;font-weight:500;}
+nav li:hover{color:#38bdf8;transform:scale(1.1);}
+
+/* HERO */
+.hero{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100vh;}
+.hero h2{font-size:80px;line-height:1.1;color:#38bdf8;font-weight:700;}
+.hero p{margin-top:20px;font-size:22px;color:white;max-width:700px;}
+.hero .btn{margin-top:40px;padding:15px 40px;border:none;border-radius:30px;background:#38bdf8;color:black;font-weight:600;cursor:pointer;transition:0.4s;}
+.hero .btn:hover{transform:scale(1.1);box-shadow:0 0 50px #38bdf8;}
+
+/* CASE GRID */
+.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:50px;margin-top:50px;}
+.case-card{position:relative;padding:40px;background:rgba(0,0,0,0.7);backdrop-filter:blur(15px);border-radius:20px;color:white;overflow:hidden;transition:0.5s;cursor:pointer;}
+.case-card h3{font-size:24px;font-weight:700;margin-bottom:10px;}
+.case-card span{font-size:60px;font-weight:900;color:#38bdf8;position:absolute;top:20px;left:20px;opacity:0.1;z-index:0;}
+.case-card:hover{transform:translateY(-15px);box-shadow:0 0 50px #38bdf8;}
+
+/* ABOUT / SERVICES / SKILLS */
+section h2{font-size:60px;color:#38bdf8;margin-bottom:20px;}
+section p{font-size:18px;line-height:1.6;color:white;max-width:700px;}
+
+/* PYTHON CHART */
+.chart-container{max-width:600px;margin-top:30px;background:rgba(0,0,0,0.6);padding:20px;border-radius:20px;box-shadow:0 0 30px #facc15;}
+.code-box{background:rgba(0,0,0,0.85);padding:20px;border-radius:15px;margin-top:20px;overflow-x:auto;font-family:monospace;color:#38bdf8;box-shadow:0 0 25px #38bdf8;}
+
+/* CONTACT */
+.contact-box{background:rgba(0,0,0,0.7);padding:30px;border-radius:20px;max-width:450px;backdrop-filter:blur(12px);box-shadow:0 0 25px #22c55e;}
+.contact-box p{margin:10px 0;font-size:18px;}
+
+/* FOOTER */
+footer{text-align:center;padding:30px;background:#020617;color:#aaa;}
+
+/* STAR BACKGROUND */
+canvas#space{position:fixed;inset:0;z-index:-2;}
+
+/* FLOATING CODING ICONS */
+.coding-img{position:absolute;width:40px;opacity:0.7;animation:floatCoding linear infinite;}
+@keyframes floatCoding{0%{transform:translateY(0);}50%{transform:translateY(-30px);}100%{transform:translateY(0);}}
+
+/* FLOATING LAPTOPS */
+#laptop-container{position:fixed;inset:0;pointer-events:none;z-index:-1;}
+.laptop{position:absolute;width:60px;opacity:0.6;transform-origin:center;transition:transform 0.2s;}
+</style>
+</head>
+<body>
+
+<canvas id="space"></canvas>
+<div id="laptop-container"></div>
+
+<nav>
+<h1>Shantanu</h1>
+<ul>
+<li onclick="scrollToId('home')">Home</li>
+<li onclick="scrollToId('about')">About</li>
+<li onclick="scrollToId('services')">Services</li>
+<li onclick="scrollToId('projects')">Projects</li>
+<li onclick="scrollToId('skills')">Skills</li>
+<li onclick="scrollToId('python')">Python</li>
+<li onclick="scrollToId('contact')">Contact</li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+<h2>We Craft Digital Futures</h2>
+<p>Shantanu Web — a creative cosmic portfolio with interactive animations, smooth transitions, and data-driven visuals.</p>
+<button class="btn" onclick="scrollToId('about')">Explore</button>
+<img src="https://img.icons8.com/ios-filled/100/ffffff/person-running.png" id="banda">
+<img src="https://img.icons8.com/ios-filled/50/38bdf8/code.png" class="coding-img" style="top:100px;left:50px;animation-duration:5s;">
+<img src="https://img.icons8.com/ios-filled/50/facc15/code.png" class="coding-img" style="top:200px;left:300px;animation-duration:7s;">
+<img src="https://img.icons8.com/ios-filled/50/22c55e/code.png" class="coding-img" style="top:400px;left:600px;animation-duration:6s;">
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<p>I create immersive websites with cosmic backgrounds, smooth scroll animations, interactive coding showcases, and a bold visual style inspired by top creative agencies.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Services</h2>
+<div class="case-grid">
+<div class="case-card"><span>01</span><h3>Web Animations</h3><p>Dynamic, smooth animations for immersive web experiences.</p></div>
+<div class="case-card"><span>02</span><h3>Frontend Development</h3><p>HTML, CSS, JS, React — clean and performant code.</p></div>
+<div class="case-card"><span>03</span><h3>UI/UX Design</h3><p>Minimal, intuitive, and modern interfaces.</p></div>
+<div class="case-card"><span>04</span><h3>Motion Graphics</h3><p>Engaging visuals and subtle transitions.</p></div>
+<div class="case-card"><span>05</span><h3>Portfolio Sites</h3><p>Custom websites to showcase work professionally.</p></div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="case-grid">
+<div class="case-card"><span>01</span><h3>Cosmic Portfolio</h3><p>Interactive web portfolio with starry backgrounds.</p></div>
+<div class="case-card"><span>02</span><h3>Data Dashboards</h3><p>Dynamic charts and analytics using Python and JS.</p></div>
+<div class="case-card"><span>03</span><h3>Interactive Charts</h3><p>NumPy & Pandas data visualizations embedded in web pages.</p></div>
+<div class="case-card"><span>04</span><h3>Python Projects</h3><p>Showcasing coding skills with practical examples.</p></div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="case-grid">
+<div class="case-card"><span>01</span><h3>HTML & CSS</h3></div>
+<div class="case-card"><span>02</span><h3>JavaScript</h3></div>
+<div class="case-card"><span>03</span><h3>Animations & Motion</h3></div>
+<div class="case-card"><span>04</span><h3>Python / Pandas / NumPy</h3></div>
+</div>
+</section>
+
+<!-- PYTHON -->
+<section id="python">
+<h2>Python, NumPy & Pandas</h2>
+<p>Interactive skill chart and code preview</p>
+<div class="chart-container">
+<canvas id="pythonChart"></canvas>
+</div>
+<div class="code-box">
+<pre>
+import numpy as np
+import pandas as pd
+
+data = pd.DataFrame({
+    'Skill': ['Python', 'NumPy', 'Pandas', 'Data Analysis'],
+    'Level':[95,90,85,90]
+})
+
+print(data)
+</pre>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Me</h2>
+<div class="contact-box">
+<p>📞 7225943177</p>
+<p>📧 shantanushekhawat@gmail.com</p>
+</div>
+</section>
+
+<footer>
+© 2026 SHANTANU — Creative Cosmic Web
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// STAR BACKGROUND
+const canvas=document.getElementById("space");
+const ctx=canvas.getContext("2d");
+canvas.width=innerWidth; canvas.height=innerHeight;
+let stars=[];
+for(let i=0;i<450;i++){stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,size:Math.random()*2+1,speed:Math.random()*0.2+0.05});}
+function animateStars(){ctx.clearRect(0,0,canvas.width,canvas.height);for(let s of stars){s.y+=s.speed;if(s.y>canvas.height){s.y=0;s.x=Math.random()*canvas.width;}ctx.fillStyle="white";ctx.beginPath();ctx.arc(s.x,s.y,s.size,0,Math.PI*2);ctx.fill();}requestAnimationFrame(animateStars);}
+animateStars();
+
+// RUNNING BANDA
+const banda=document.getElementById("banda");let bandaX=-50;
+function moveBanda(){bandaX+=1;if(bandaX>window.innerWidth){bandaX=-50;}banda.style.left=bandaX+'px';requestAnimationFrame(moveBanda);}
+moveBanda();
+
+// SCROLL TO ID
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+// PYTHON CHART
+const ctxChart=document.getElementById('pythonChart').getContext('2d');
+new Chart(ctxChart,{type:'bar',data:{labels:['Python','NumPy','Pandas','Data Analysis'],datasets:[{label:'Skill Level',data:[95,90,85,90],backgroundColor:['#38bdf8','#22c55e','#facc15','#f87171']}]},options:{scales:{y:{beginAtZero:true,max:100}},plugins:{legend:{display:false}}}});
+
+// LAPTOPS FLOATING BACKGROUND
+const laptopContainer = document.getElementById("laptop-container");
+const laptopCount = 12;
+const laptops = [];
+for(let i=0;i<laptopCount;i++){
+  let img = document.createElement('img');
+  img.src = "https://img.icons8.com/ios-filled/50/38bdf8/laptop.png";
+  img.className = "laptop";
+  img.style.top = Math.random()*window.innerHeight+"px";
+  img.style.left = Math.random()*window.innerWidth+"px";
+  laptopContainer.appendChild(img);
+  laptops.push({el:img,x:parseFloat(img.style.left),y:parseFloat(img.style.top),dx:(Math.random()-0.5)*0.2,dy:(Math.random()-0.5)*0.2});
+}
+function animateLaptops(){
+  laptops.forEach(l=>{
+    l.x += l.dx;
+    l.y += l.dy;
+    if(l.x>window.innerWidth) l.x=0;
+    if(l.x<0) l.x=window.innerWidth;
+    if(l.y>window.innerHeight) l.y=0;
+    if(l.y<0) l.y=window.innerHeight;
+    l.el.style.left=l.x+"px";
+    l.el.style.top=l.y+"px";
+  });
+  requestAnimationFrame(animateLaptops);
+}
+animateLaptops();
+
+document.addEventListener('mousemove', e=>{
+  const mouseX=e.clientX;
+  const mouseY=e.clientY;
+  laptops.forEach((l,i)=>{
+    const dx = (mouseX - l.x)*0.001;
+    const dy = (mouseY - l.y)*0.001;
+    l.x += dx;
+    l.y += dy;
+    l.el.style.transform = `rotate(${dx*50}deg) rotateY(${dy*50}deg)`;
+  });
+});
+</script>
+</body>
+</html>
